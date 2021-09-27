@@ -1,3 +1,10 @@
 <p>pages works!</p>
 
-<p *ngFor="let info of infos">infos: {{info}}</p>
+<p *ngFor="let info of infos">
+    estado: {{info.state}}
+    casos: {{info.cases}}
+    mortes: {{info.deaths}}
+    suspeitas:{{info.suspects}}
+</p>
+
+<app-pizza-chart [pizzaData]="infos"></app-pizza-chart>

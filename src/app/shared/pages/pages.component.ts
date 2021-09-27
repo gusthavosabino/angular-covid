@@ -9,13 +9,18 @@ import { ConfigService } from 'src/app/services/config.service';
 })
 export class PagesComponent implements OnInit {
 
-  infos: Covid[];
+  loading: boolean = false;
 
-  todos = [];
+  infos: Covid[] = [];
+
+  todos: any[] = [];
+
+  cases: any;
   constructor(
     private $configService: ConfigService,
   ) { 
     this.infos = []
+    this.todos = [];
   }
 
   ngOnInit(): void {
@@ -27,8 +32,11 @@ export class PagesComponent implements OnInit {
   pegarInfo() {
 
     this.$configService.getInfo().subscribe(res => {
-      this.infos = res
-      console.log('res', this.infos)
+      this.infos = res;
+      this.infos.forEach(res => {
+        var casos = res.cases;
+      })
+
     })
 
   }
