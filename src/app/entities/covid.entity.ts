@@ -7,3 +7,12 @@ export interface Covid {
   suspects: number;
   uf: string;
 }
+
+export interface Paises {
+  country: string;
+  cases: number;
+  confirmed: number;
+  deaths: number;
+  recovered: number;
+  updated_at: Date;
+}

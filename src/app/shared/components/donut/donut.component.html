@@ -1,0 +1,17 @@
+<h2 class="text-center mt-4">{{ chartTittleType }}</h2>
+
+
+<div style="display: block;">
+    <canvas baseChart 
+    width="400"
+    height="400"
+      [data]="ChartData" 
+      [labels]="ChartLabels" 
+      [chartType]="ChartType"
+      [options]="ChartOptions"
+      [plugins]="ChartPlugins"
+      [legend]="ChartLegend"
+      [colors]="ChartColors">
+    </canvas>
+  </div>
+  

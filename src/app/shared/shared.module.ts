@@ -1,26 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PizzaChartComponent } from './components/pizza-chart/pizza-chart.component';
-import { DonutChartComponent } from './components/donut-chart/donut-chart.component';
-import { NgxEchartsModule } from 'ngx-echarts';
-import { PagesModule } from './pages/pages.module';
+import { PizzaComponent } from './components/pizza/pizza.component';
+import { DonutComponent } from './components/donut/donut.component';
+import { BarComponent } from './components/bar/bar.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 
 
 @NgModule({
   declarations: [
-    PizzaChartComponent,
-    DonutChartComponent,
+    PizzaComponent,
+    DonutComponent,
+    BarComponent,
   ],
   imports: [
     CommonModule,
-    NgxEchartsModule.forRoot({echarts: () => import('echarts'),}),
+    ChartsModule,
+    
   ],
   exports: [
-    PizzaChartComponent,
-    DonutChartComponent,
-    
+    PizzaComponent,
+    DonutComponent,
+    BarComponent,
+
   ]
 })
 export class SharedModule { }
