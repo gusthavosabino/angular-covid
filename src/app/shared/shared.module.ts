@@ -4,6 +4,9 @@ import { PizzaChartComponent } from './components/pizza-chart/pizza-chart.compon
 import { DonutChartComponent } from './components/donut-chart/donut-chart.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { PagesModule } from './pages/pages.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -12,6 +15,8 @@ import { PagesModule } from './pages/pages.module';
   declarations: [
     PizzaChartComponent,
     DonutChartComponent,
+    FooterComponent,
+    HeaderComponent,
   ],
   imports: [
     CommonModule,
@@ -20,7 +25,9 @@ import { PagesModule } from './pages/pages.module';
   exports: [
     PizzaChartComponent,
     DonutChartComponent,
-    
+    MatProgressSpinnerModule,
+    FooterComponent,
+    HeaderComponent
   ]
 })
 export class SharedModule { }

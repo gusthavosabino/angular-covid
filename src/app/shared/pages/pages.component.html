@@ -1,10 +1,29 @@
 <p>pages works!</p>
 
-<p *ngFor="let info of infos">
-    estado: {{info.state}}
-    casos: {{info.cases}}
-    mortes: {{info.deaths}}
-    suspeitas:{{info.suspects}}
-</p>
+<!-- <p *ngFor="let info of infos">
+    estado: {{info.state}} casos: {{info.cases}} mortes: {{info.deaths}} suspeitas:{{info.suspects}}
+</p> -->
+
+<h4>Basic mat-select</h4>
+<mat-form-field appearance="fill">
+    <mat-select placeholder="Estado">
+        <mat-option *ngFor="let estado of estados" [value]="estado.nome" (click)="onClick(estado.id)">
+            {{estado.nome}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-spinner diameter="18" *ngIf="loadingCity && optionsCidades.length == 0"></mat-spinner>
+
+<div>
+    <mat-form-field *ngIf="selectedUF && optionsCidades.length > 0">
+        <mat-select placeholder="Cidade">
+            <mat-option *ngFor="let cidade of optionsCidades" [value]="cidade.nome">
+                {{cidade.nome}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
 
 <app-pizza-chart [pizzaData]="infos"></app-pizza-chart>

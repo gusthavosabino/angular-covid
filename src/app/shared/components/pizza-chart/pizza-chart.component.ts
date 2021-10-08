@@ -9,7 +9,7 @@ import { Covid } from 'src/app/entities/covid.entity';
 })
 export class PizzaChartComponent implements OnInit {
 
-  @Input() pizzaData!: Covid[];
+  @Input() pizzaData: Covid[];
 
 
   datanumber!: any;
@@ -70,11 +70,16 @@ export class PizzaChartComponent implements OnInit {
     this.dataValue = [];
     this.datanumber = [];
 
+    if (this.pizzaData != undefined) {
         this.pizzaData.forEach(element => {
-          this.dataValue.push(element.cases);
-          this.datanumber.push(element.state);
+          this.datanumber.push(element.cases);
+          this.dataValue.push(element.state);
         });
-
+      }
+      else {
+        this.dataValue = [['Download', 'Sales'], ['In', 'Store', 'Sales'], 'Mail Sales'];
+        this.datanumber = [300, 500, 100];
+      }
 
   }
 
